@@ -113,15 +113,51 @@ color: var(--main-h-color);
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
 
   font-size: 16px;
   line-height: var(--typical-lh);
   color: var(--main-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+.header-link::after{
+  content: "";
+  left: 0px;
+  bottom: 0px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--present-btn);
+  position: absolute;
+  bottom: 0px;
+  opacity: 0;
+  border-radius: 2px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus{
  color: var(--logo-color); 
 }
+.header-link:hover::after{
+  opacity: 1;
+}
+.header-mail{
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+
+  font-size: 16px;
+  line-height: var(--typical-lh);
+  color: var(--main-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-mail:hover,
+.header-mail:focus{
+  color: var(--logo-color); 
+}
+
 .header-tel {
   display: block;
   margin-left: 40px;
@@ -131,6 +167,7 @@ color: var(--main-h-color);
   font-size: 16px;
   line-height: var(--typical-lh);
   color: var(--main-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-tel:hover,
 .header-tel:focus{
@@ -181,8 +218,8 @@ color: var(--main-h-color);
   color: var(--first-btn-color);
   background-color: var(--logo-color);
   cursor: pointer;
-  /* transition-property: background-color;
-  transition-duration: 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .hero-btn:hover,
@@ -353,6 +390,7 @@ color: var(--main-h-color);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link:hover{
   background-color: var(--present-btn);
@@ -376,6 +414,7 @@ color: var(--main-h-color);
   height: 88px;
   border-radius: 4px;
   border: 1px solid var(--icon-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 .icon-customers-link{
@@ -392,6 +431,7 @@ color: var(--main-h-color);
 }
 .icon-customers-svg{
   fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-customers-svg:hover{
  fill: var(--present-btn);
@@ -401,8 +441,8 @@ color: var(--main-h-color);
 
 /* ---------FOOTER-------- */
 .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  
+  padding-left: 141px;
   background: var(--main-h-color); 
   
 }
@@ -413,9 +453,9 @@ color: var(--main-h-color);
 .logo-footer{
  display: inline-block;
  align-items: center;
- padding-top: 100px; 
+ /* padding-top: 100px; 
  padding-left: 156px;
- padding-bottom: 100px;
+ padding-bottom: 100px; */
 }
 .footer-logo {
 margin-bottom: 16px;
@@ -474,23 +514,13 @@ color: var(--logo-span-footer);
   display: flex;
   border-radius: 50%;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .icon-social-link:hover{
   background-color: var(--icon-hover);
 }
 /* portfolio */
-.header {
-}
-.header-navigation {
-}
-.header-logo {
-}
-.header-item {
-}
-.header-link,
-.header-tel {
-}
 .cards {
   padding-top: 96px;
   padding-bottom: 120px;
@@ -520,6 +550,8 @@ letter-spacing: 0.04em;
 background-color: var(--logo-span-footer);
 color: var(--logo-color); 
 cursor: pointer;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .cards-btn .btn:hover,
@@ -541,10 +573,46 @@ cursor: pointer;
 .foto{
   display: block;
 }
+.foto-content{
+  position: relative;
+  overflow: hidden;
+}
+.foto-overley{
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--logo-color);
+  /* opacity: 0; */
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+.foto-content:hover .foto-overley{
+  /* opacity: 1; */
+  
+}
+.cards-foto:hover .foto-overley{
+  transform: translateY(0);
+}
+.foto-texte{
+margin-top: 40px;
+margin-left: 32px;
+}
+.foto-texte .text{
+
+width: 296px; 
+font-weight: 400;
+font-size: 16px;
+line-height: 1.28;
+letter-spacing: 2%;
+color: var(--logo-span-footer);
+}
 .cards-foto {
   width: 360px;
   
   margin-bottom: 48px;
+  
   
 }
 .cards-foto:nth-child(3n) {

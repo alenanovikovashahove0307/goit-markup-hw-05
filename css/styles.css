@@ -8,7 +8,8 @@
   --present-btn: #404BBF;
   --body-color: #434455; 
   --icon-color: #8e8f99;
-  --icon-hover:#31D0AA;   
+  --icon-hover:#31D0AA; 
+  --modal-color:#FCFCFC;
   --typical-lh: 1.5;
   }
 p,
@@ -139,7 +140,8 @@ color: var(--main-h-color);
 .header-link:focus{
  color: var(--logo-color); 
 }
-.header-link:hover::after{
+.header-link:hover::after,
+.header-link:focus::after{
   opacity: 1;
 }
 .header-mail{
@@ -437,13 +439,10 @@ color: var(--main-h-color);
  fill: var(--present-btn);
 }
 
-  
-
 /* ---------FOOTER-------- */
 .footer {
   
-  padding-left: 141px;
-  background: var(--main-h-color); 
+    background: var(--main-h-color); 
   
 }
 .footer-social{
@@ -453,9 +452,8 @@ color: var(--main-h-color);
 .logo-footer{
  display: inline-block;
  align-items: center;
- /* padding-top: 100px; 
- padding-left: 156px;
- padding-bottom: 100px; */
+ padding-top: 100px; 
+ padding-bottom: 100px;
 }
 .footer-logo {
 margin-bottom: 16px;
@@ -519,6 +517,48 @@ color: var(--logo-span-footer);
 }
 .icon-social-link:hover{
   background-color: var(--icon-hover);
+}
+/* MODAL */
+.backdrop{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  min-width: 408px;
+  min-height: 576px;
+  background-color: var(--modal-color);
+}
+.modal-btn{
+  margin-top: 24px;
+  margin-left: 360px;
+
+  display: block;
+  text-align: center;
+  
+  width: 24px;
+  height: 24px;
+  background-color: var(--footer-text-color);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.modal-btn:hover{
+  background-color: var(--present-btn);
+  color: var(--first-btn-color);
 }
 /* portfolio */
 .cards {
